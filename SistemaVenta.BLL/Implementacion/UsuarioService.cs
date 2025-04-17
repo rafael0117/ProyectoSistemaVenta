@@ -97,7 +97,8 @@ namespace SistemaVenta.BLL.Implementacion
 
                 return usuario_creado;
             }
-            catch(Exception ex) {
+            catch(Exception ex)
+            {
                 throw;
             }
         }
@@ -147,13 +148,13 @@ namespace SistemaVenta.BLL.Implementacion
             {
                 Usuario usuario_encontrado = await _repositorio.Obtener(u => u.IdUsuario = idUsuario);
 
-                if (usuario_encontrado == null)
+                if(usuario_encontrado == null)
                     throw new TaskCanceledException("El usuario no existe");
 
                 string nombreFoto = usuario_encontrado.NombreFoto;
                 bool respuesta = await _repositorio.Eliminar(usuario_encontrado);
 
-                if (respuesta)
+                if(respuesta)
                     await _fireBaseService.EliminarStorage("carpeta_usuario", nombreFoto);
 
                 return true;

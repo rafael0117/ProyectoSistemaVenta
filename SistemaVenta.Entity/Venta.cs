@@ -11,6 +11,8 @@ public partial class Venta
 
     public int? IdTipoDocumentoVenta { get; set; }
 
+    public string? TipoDocumentoVenta { get; set; }
+
     public int? IdUsuario { get; set; }
 
     public string? DocumentoCliente { get; set; }
