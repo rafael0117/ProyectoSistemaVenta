@@ -149,6 +149,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             #endregion
 
             #region DetalleVenta
+
             #endregion
         }
     }
